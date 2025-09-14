@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic Dark Theme Design System */
+
+@layer base {
+  :root {
+    /* Core futuristic dark theme */
+    --background: 240 10% 4%;
+    --foreground: 180 100% 90%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 180 100% 90%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 180 100% 90%;
+
+    /* Electric blue primary */
+    --primary: 195 100% 50%;
+    --primary-foreground: 240 10% 4%;
+
+    /* Neon green secondary */  
+    --secondary: 165 100% 50%;
+    --secondary-foreground: 240 10% 4%;
+
+    /* Dark muted tones */
+    --muted: 240 10% 10%;
+    --muted-foreground: 180 20% 60%;
+
+    /* Purple accent */
+    --accent: 285 100% 50%;
+    --accent-foreground: 240 10% 4%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 240 10% 4%;
+
+    --border: 240 20% 20%;
+    --input: 240 20% 15%;
+    --ring: 195 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom futuristic colors */
+    --cyber-blue: 195 100% 50%;
+    --neon-green: 165 100% 50%;
+    --electric-purple: 285 100% 50%;
+    --hologram: 195 100% 70%;
+    --glow: 195 100% 60%;
+
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--cyber-blue)), hsl(var(--electric-purple)));
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-green)), hsl(var(--cyber-blue)));
+    --gradient-hologram: linear-gradient(135deg, hsl(var(--hologram)), hsl(var(--electric-purple)), hsl(var(--neon-green)));
+
+    /* Glows and shadows */
+    --glow-cyber: 0 0 20px hsl(var(--cyber-blue) / 0.5);
+    --glow-neon: 0 0 20px hsl(var(--neon-green) / 0.5);
+    --glow-purple: 0 0 20px hsl(var(--electric-purple) / 0.5);
+    --shadow-cyber: 0 4px 20px hsl(var(--cyber-blue) / 0.3);
+    --shadow-neon: 0 4px 20px hsl(var(--neon-green) / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 180 100% 90%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 180 100% 90%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 180 100% 90%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 240 10% 4%;
+
+    --secondary: 165 100% 50%;
+    --secondary-foreground: 240 10% 4%;
+
+    --muted: 240 10% 10%;
+    --muted-foreground: 180 20% 60%;
+
+    --accent: 285 100% 50%;
+    --accent-foreground: 240 10% 4%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 240 10% 4%;
+
+    --border: 240 20% 20%;
+    --input: 240 20% 15%;
+    --ring: 195 100% 50%;
+
+    --sidebar-background: 240 10% 6%;
+    --sidebar-foreground: 180 100% 90%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 240 10% 4%;
+    --sidebar-accent: 240 10% 10%;
+    --sidebar-accent-foreground: 180 100% 90%;
+    --sidebar-border: 240 20% 20%;
+    --sidebar-ring: 195 100% 50%;
+  }
+
+  /* Animations and transitions */
+  :root {
+    --transition-cyber: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.5s ease-in-out;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--cyber-blue) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--electric-purple) / 0.1) 0%, transparent 50%);
+  }
+}
+
+@layer components {
+  .cyber-glow {
+    box-shadow: var(--glow-cyber);
+    transition: var(--transition-glow);
+  }
+  
+  .cyber-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--cyber-blue) / 0.8);
+  }
+  
+  .neon-glow {
+    box-shadow: var(--glow-neon);
+    transition: var(--transition-glow);
+  }
+  
+  .neon-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--neon-green) / 0.8);
+  }
+  
+  .hologram-text {
+    background: var(--gradient-hologram);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .cyber-border {
+    border: 1px solid hsl(var(--cyber-blue) / 0.3);
+    box-shadow: inset 0 0 10px hsl(var(--cyber-blue) / 0.1);
+  }
+  
+  .cyber-button {
+    background: linear-gradient(135deg, hsl(var(--cyber-blue) / 0.2), hsl(var(--electric-purple) / 0.2));
+    border: 1px solid hsl(var(--cyber-blue));
+    color: hsl(var(--cyber-blue));
+    transition: var(--transition-cyber);
+  }
+  
+  .cyber-button:hover {
+    background: linear-gradient(135deg, hsl(var(--cyber-blue) / 0.3), hsl(var(--electric-purple) / 0.3));
+    box-shadow: var(--glow-cyber);
+    transform: translateY(-2px);
+  }
+  
+  .loading-dots {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
